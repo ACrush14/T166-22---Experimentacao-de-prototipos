@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://dpshhwydbsmp3"]
+
+[ext_resource type="Texture2D" uid="uid://dl0kuv8e1o6n3" path="res://Assets Super Mario Bros/Sprites/Goomba_Flat.png" id="1_11lup"]
+[ext_resource type="Texture2D" uid="uid://dhmodocnsu7ds" path="res://Assets Super Mario Bros/Sprites/Goomba_Walk1.png" id="2_jg8wq"]
+[ext_resource type="Texture2D" uid="uid://cxtty1fuwy5ab" path="res://Assets Super Mario Bros/Sprites/Goomba_Walk2.png" id="3_w2rut"]
+
+[sub_resource type="GDScript" id="GDScript_11lup"]
+script/source = "extends Enemy
+
+@onready var death_timer: Timer = $Death_Timer
+
+func stomp():
+	sprite.play(\"Stomped\")
+	stomped = true
+	
+	set_collision_layer_value(3, false)
+	set_collision_mask_value(1, false)
+	set_collision_mask_value(3, false)
+
+	
+	death_timer.start()
+
+func _on_death_timer_timeout() -> void:
+	queue_free()
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oulaa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_11lup")
+}],
+"loop": true,
+"name": &"Stomped",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jg8wq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w2rut")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11lup"]
+size = Vector2(13, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jg8wq"]
+size = Vector2(16, 15)
+
+[node name="Goomba" type="CharacterBody2D" groups=["Enemies"]]
+collision_layer = 4
+collision_mask = 7
+script = SubResource("GDScript_11lup")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oulaa")
+animation = &"Walk"
+autoplay = "Walk"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_11lup")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="Hitbox_Collision" type="CollisionShape2D" parent="Hitbox"]
+visible = false
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_jg8wq")
+
+[node name="Death_Timer" type="Timer" parent="."]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-90, 0)
+rect = Rect2(-10, -10, 200, 20)
+
+[connection signal="timeout" from="Death_Timer" to="." method="_on_death_timer_timeout"]
