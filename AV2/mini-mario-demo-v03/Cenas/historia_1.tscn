@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6v66wqvpbb26"]
+
+[ext_resource type="FontFile" uid="uid://blhugc381c0nu" path="res://brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="1_glk23"]
+[ext_resource type="Script" uid="uid://d3htj2vctm1os" path="res://Scripts/historia_1.gd" id="1_md1oa"]
+[ext_resource type="AudioStream" uid="uid://bgspneme568xg" path="res://Cenas/01. Prelude.mp3" id="3_tdcko"]
+
+[node name="Historia1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_md1oa")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -520.0
+offset_top = -241.0
+offset_right = 518.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_glk23")
+theme_override_font_sizes/font_size = 25
+text = "Oh não! A princesa foi raptada e está 
+dentro de uma das cavernas
+do maligno mago Zamir.
+
+Você, o cavaleiro Xander precisa
+atravessar os níveis para
+chegar nessas cavernas saber se
+a princesa está lá.
+
+Vamos procurar a princesa!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Nivel01" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = 147.0
+offset_right = 144.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_glk23")
+theme_override_font_sizes/font_size = 40
+text = "Nivel 01
+"
+
+[node name="Historia1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_tdcko")
+volume_db = 10.511
+pitch_scale = 1.23
+autoplay = true
+
+[connection signal="pressed" from="Nivel01" to="." method="_on_button_pressed"]

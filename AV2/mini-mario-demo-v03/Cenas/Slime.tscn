@@ -1,0 +1,98 @@
+[gd_scene load_steps=11 format=3 uid="uid://b4kvqyej1oafh"]
+
+[ext_resource type="Script" uid="uid://cetx5j06jxyvr" path="res://Scripts/slime.gd" id="1_8ic7c"]
+[ext_resource type="Texture2D" uid="uid://bx8b5eh8e3jpb" path="res://brackeys_platformer_assets/sprites/slime_green.png" id="1_h24me"]
+[ext_resource type="AudioStream" uid="uid://f4oim8b6j6sj" path="res://GameSFX/PowerUp/Retro PowerUP 09.wav" id="3_rj1xe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbfrd"]
+atlas = ExtResource("1_h24me")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11lup"]
+atlas = ExtResource("1_h24me")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jg8wq"]
+atlas = ExtResource("1_h24me")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2rut"]
+atlas = ExtResource("1_h24me")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oulaa"]
+atlas = ExtResource("1_h24me")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8mn0i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbfrd")
+}],
+"loop": true,
+"name": &"Dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11lup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jg8wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2rut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oulaa")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7in6l"]
+size = Vector2(14, 14)
+
+[node name="Slime" type="Area2D"]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_8ic7c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8mn0i")
+animation = &"Walk"
+autoplay = "Walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_7in6l")
+
+[node name="RayCast2DE" type="RayCast2D" parent="."]
+position = Vector2(0, 6)
+target_position = Vector2(-7, 0)
+collision_mask = 2
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 12)
+collision_mask = 2
+
+[node name="RayCast2DD" type="RayCast2D" parent="."]
+position = Vector2(0, 6)
+target_position = Vector2(7, 0)
+collision_mask = 2
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(7.15256e-07, 5.5)
+scale = Vector2(0.7, 0.65)
+
+[node name="MorteSlime" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rj1xe")
+volume_db = -0.37
+pitch_scale = 2.2
+attenuation = 39.3967
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

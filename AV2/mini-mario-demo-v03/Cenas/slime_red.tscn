@@ -1,0 +1,88 @@
+[gd_scene load_steps=10 format=3 uid="uid://b3324sf24lo71"]
+
+[ext_resource type="Texture2D" uid="uid://csi6ms0f3p85l" path="res://brackeys_platformer_assets/sprites/slime_purple.png" id="1_m5kuc"]
+[ext_resource type="Script" uid="uid://dytwaksg3svtu" path="res://Scripts/slime_red.gd" id="1_t32r0"]
+[ext_resource type="Shape2D" uid="uid://xcv3m7dtwnfh" path="res://Collisions/Slime_Red_Small.tres" id="2_yusm8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5kuc"]
+atlas = ExtResource("1_m5kuc")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yusm8"]
+atlas = ExtResource("1_m5kuc")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t32r0"]
+atlas = ExtResource("1_m5kuc")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1hw6"]
+atlas = ExtResource("1_m5kuc")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dteu"]
+atlas = ExtResource("1_m5kuc")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oiqrh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5kuc")
+}],
+"loop": true,
+"name": &"Dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yusm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t32r0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1hw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dteu")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[node name="SlimeRed" type="Area2D"]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_t32r0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oiqrh")
+animation = &"Dead"
+autoplay = "Walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.5)
+shape = ExtResource("2_yusm8")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 12)
+collision_mask = 2
+
+[node name="RayCast2DE" type="RayCast2D" parent="."]
+position = Vector2(0, 6)
+target_position = Vector2(-7, 0)
+collision_mask = 2
+
+[node name="RayCast2DD" type="RayCast2D" parent="."]
+position = Vector2(0, 6)
+target_position = Vector2(7, 0)
+collision_mask = 2
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-5.96046e-08, 6)
+scale = Vector2(0.7, 0.6)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
