@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://1v5ms2hg168a"
+path="res://.godot/imported/Retro Roar Krushed 01.wav-a1252a3c72322e4bafab30db1383d3a8.sample"
+
+[deps]
+
+source_file="res://SFXs/GameSFX/Roar/Retro Roar Krushed 01.wav"
+dest_files=["res://.godot/imported/Retro Roar Krushed 01.wav-a1252a3c72322e4bafab30db1383d3a8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
