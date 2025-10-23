@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://chchgfi77jw05"
+path="res://.godot/imported/Retro Music - ABMU - ChipWave 01.wav-aac4ede7056c649f97a06b5ef66013bd.sample"
+
+[deps]
+
+source_file="res://SFXs/GameSFX/Music/ChipWave/Retro Music - ABMU - ChipWave 01.wav"
+dest_files=["res://.godot/imported/Retro Music - ABMU - ChipWave 01.wav-aac4ede7056c649f97a06b5ef66013bd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

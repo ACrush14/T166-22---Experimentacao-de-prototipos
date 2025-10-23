@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cs2yl5gmxemo6"]
 
 [ext_resource type="Texture2D" uid="uid://7dphwbye1uvp" path="res://Assets/0b218a84-6016-446f-9deb-0b519afd8478.jpg" id="1_4hewq"]
-[ext_resource type="Texture2D" uid="uid://ck4vttk6w72o7" path="res://Assets/pngtree-speech-bubble-png-image_15769537.png" id="2_23wkh"]
+[ext_resource type="Texture2D" uid="uid://dnkbvrwyb054k" path="res://Assets/pngegg.png" id="2_4hewq"]
 [ext_resource type="Texture2D" uid="uid://cifdpk0cb0wnu" path="res://Assets/YoMoji!/happy 2.png" id="3_h2tna"]
 [ext_resource type="FontFile" uid="uid://blhugc381c0nu" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="4_cl8c5"]
 
@@ -19,9 +19,9 @@ scale = Vector2(1.79627, 1.80278)
 texture = ExtResource("1_4hewq")
 
 [node name="Pngtree-speech-bubble-png-image15769537" type="Sprite2D" parent="."]
-position = Vector2(581.5, 212)
-scale = Vector2(0.5028, 0.254755)
-texture = ExtResource("2_23wkh")
+position = Vector2(555.5, 257.5)
+scale = Vector2(1.3203126, 0.784965)
+texture = ExtResource("2_4hewq")
 
 [node name="Happy2" type="Sprite2D" parent="."]
 position = Vector2(988, 482)
@@ -29,6 +29,7 @@ scale = Vector2(1.11572, 1.11016)
 texture = ExtResource("3_h2tna")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 327.0
 offset_top = 58.0
 offset_right = 885.0
@@ -49,3 +50,52 @@ conversou com os ____________.
 ____________ e cheio de vida.
 "
 vertical_alignment = 1
+
+[node name="Button13" type="Button" parent="."]
+layout_mode = 0
+offset_left = 715.0
+offset_top = 64.0
+offset_right = 862.0
+offset_bottom = 94.0
+
+[node name="Button14" type="Button" parent="."]
+layout_mode = 0
+offset_left = 479.0
+offset_top = 114.0
+offset_right = 626.0
+offset_bottom = 144.0
+
+[node name="Button15" type="Button" parent="."]
+layout_mode = 0
+offset_left = 543.0
+offset_top = 147.0
+offset_right = 664.0
+offset_bottom = 170.0
+
+[node name="Button16" type="Button" parent="."]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 168.0
+offset_right = 678.0
+offset_bottom = 191.0
+
+[node name="Button17" type="Button" parent="."]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 239.0
+offset_right = 633.0
+offset_bottom = 262.0
+
+[node name="Button18" type="Button" parent="."]
+layout_mode = 0
+offset_left = 630.0
+offset_top = 265.0
+offset_right = 796.0
+offset_bottom = 288.0
+
+[node name="Button19" type="Button" parent="."]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 315.0
+offset_right = 487.0
+offset_bottom = 338.0

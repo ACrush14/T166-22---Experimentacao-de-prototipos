@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://db5f26k8cf6mk"
+path="res://.godot/imported/Retro FootStep 03.wav-9af862ed9fd9ffb5d93a39de1b2d4210.sample"
+
+[deps]
+
+source_file="res://SFXs/GameSFX/FootStep/Retro FootStep 03.wav"
+dest_files=["res://.godot/imported/Retro FootStep 03.wav-9af862ed9fd9ffb5d93a39de1b2d4210.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://crfm0ifnw8s7b"]
 
 [ext_resource type="Texture2D" uid="uid://7dphwbye1uvp" path="res://Assets/0b218a84-6016-446f-9deb-0b519afd8478.jpg" id="1_v7lsc"]
-[ext_resource type="Texture2D" uid="uid://ck4vttk6w72o7" path="res://Assets/pngtree-speech-bubble-png-image_15769537.png" id="2_bnmuq"]
+[ext_resource type="Texture2D" uid="uid://dnkbvrwyb054k" path="res://Assets/pngegg.png" id="2_v7lsc"]
 [ext_resource type="Texture2D" uid="uid://cifdpk0cb0wnu" path="res://Assets/YoMoji!/happy 2.png" id="3_7opqq"]
 [ext_resource type="FontFile" uid="uid://blhugc381c0nu" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="4_maubc"]
 
@@ -19,9 +19,9 @@ scale = Vector2(1.79627, 1.80278)
 texture = ExtResource("1_v7lsc")
 
 [node name="Pngtree-speech-bubble-png-image15769537" type="Sprite2D" parent="."]
-position = Vector2(581.5, 212)
-scale = Vector2(0.5028, 0.254755)
-texture = ExtResource("2_bnmuq")
+position = Vector2(540, 252.00003)
+scale = Vector2(1.24375, 0.69930077)
+texture = ExtResource("2_v7lsc")
 
 [node name="Happy2" type="Sprite2D" parent="."]
 position = Vector2(988, 482)
@@ -29,6 +29,7 @@ scale = Vector2(1.11572, 1.11016)
 texture = ExtResource("3_7opqq")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 327.0
 offset_top = 58.0
 offset_right = 885.0
@@ -46,3 +47,38 @@ encantado continuou a
 encantar a todos que 
 ____________."
 vertical_alignment = 1
+
+[node name="Button19" type="Button" parent="."]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 131.0
+offset_right = 505.0
+offset_bottom = 154.0
+
+[node name="Button20" type="Button" parent="."]
+layout_mode = 0
+offset_left = 403.0
+offset_top = 155.0
+offset_right = 523.0
+offset_bottom = 178.0
+
+[node name="Button21" type="Button" parent="."]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 179.0
+offset_right = 592.0
+offset_bottom = 202.0
+
+[node name="Button22" type="Button" parent="."]
+layout_mode = 0
+offset_left = 502.0
+offset_top = 228.0
+offset_right = 648.0
+offset_bottom = 251.0
+
+[node name="Button23" type="Button" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 303.0
+offset_right = 479.0
+offset_bottom = 326.0
