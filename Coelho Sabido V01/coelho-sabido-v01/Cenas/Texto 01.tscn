@@ -24,8 +24,8 @@ scale = Vector2(1.4499999, 0.7517482)
 texture = ExtResource("2_vpyvd")
 
 [node name="Happy2" type="Sprite2D" parent="."]
-position = Vector2(988, 482)
-scale = Vector2(1.11572, 1.11016)
+position = Vector2(1007.4061, 516.05023)
+scale = Vector2(0.9641099, 0.84414244)
 texture = ExtResource("2_753u0")
 
 [node name="Label" type="Label" parent="."]
